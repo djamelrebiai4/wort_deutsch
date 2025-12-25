@@ -95,14 +95,13 @@ export default function WordForm({ onWordAdded }: WordFormProps) {
 
         <div className="space-y-2">
           <Label htmlFor="english" className="text-sm font-medium">
-            English Translation <span className="text-destructive">*</span>
+            English Translation
           </Label>
           <Input
             id="english"
             placeholder="e.g., Butterfly"
             value={english}
             onChange={(e) => setEnglish(e.target.value)}
-            required
             className="bg-background border-input"
           />
         </div>
@@ -110,14 +109,13 @@ export default function WordForm({ onWordAdded }: WordFormProps) {
 
       <div className="space-y-2">
         <Label htmlFor="arabic" className="text-sm font-medium">
-          Arabic Translation <span className="text-destructive">*</span>
+          Arabic Translation
         </Label>
         <Input
           id="arabic"
           placeholder="e.g., فراشة"
           value={arabic}
           onChange={(e) => setArabic(e.target.value)}
-          required
           className="bg-background border-input"
           dir="rtl"
         />
@@ -167,7 +165,7 @@ export default function WordForm({ onWordAdded }: WordFormProps) {
 
       <Button
         type="submit"
-        disabled={loading || !german || !english || !arabic}
+        disabled={loading || !german}
         className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
       >
         {loading ? (
