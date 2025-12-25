@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import WordForm from "@/components/word-form"
 import TextGenerator from "@/components/text-generator"
 import StoredWords from "@/components/stored-words"
+import Image from "next/image"
 
 export default function Home() {
   const [refreshKey, setRefreshKey] = useState(0)
@@ -20,8 +21,14 @@ export default function Home() {
       <header className="border-b border-border bg-card sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">🇩🇪</span>
+            <div className="w-10 h-10 rounded-lg bg-primary overflow-hidden flex items-center justify-center">
+              <Image
+                src="/apple-icon.png"
+                alt="DeutschLern Logo"
+                width={40}
+                height={40}
+                className="object-cover"
+              />
             </div>
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold text-foreground">DeutschLern</h1>
