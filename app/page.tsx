@@ -32,7 +32,7 @@ export default function Home() {
             </div>
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold text-foreground">DeutschLern</h1>
-              <p className="text-sm text-muted-foreground">Learn German with n8n Integration</p>
+              <p className="text-sm text-muted-foreground">Master German Vocabulary</p>
             </div>
           </div>
         </div>
@@ -69,10 +69,10 @@ export default function Home() {
                   <CardTitle className="text-base">💡 Tips for Best Results</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2 text-sm text-muted-foreground">
-                  <p>• Include the word in German and English for better understanding</p>
-                  <p>• Add part of speech (noun, verb, adjective) for context</p>
-                  <p>• Include examples to see how words are used in context</p>
-                  <p>• Regular practice with the text generator reinforces learning</p>
+                  <p>• Only the German word is required to start building your collection</p>
+                  <p>• Adding translations and parts of speech helps with better context</p>
+                  <p>• Include examples to see how words are used in real sentences</p>
+                  <p>• Use the text generator to practice your words in stories</p>
                 </CardContent>
               </Card>
             </div>

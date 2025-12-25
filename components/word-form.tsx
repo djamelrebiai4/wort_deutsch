@@ -178,9 +178,6 @@ export default function WordForm({ onWordAdded }: WordFormProps) {
         )}
       </Button>
 
-      <p className="text-xs text-muted-foreground text-center">
-        Words are sent to n8n and stored for later use in text generation
-      </p>
     </form>
   )
 }

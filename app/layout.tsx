@@ -8,8 +8,8 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "DeutschLern - Learn German with n8n",
-  description: "Master German vocabulary through context-aware text generation powered by n8n integration",
+  title: "DeutschLern - Master German Vocabulary",
+  description: "Master German vocabulary through personalized practice and text generation",
   generator: "v0.app",
   icons: {
     icon: "/apple-icon.png",

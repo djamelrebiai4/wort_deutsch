@@ -167,8 +167,7 @@ export default function TextGenerator() {
 
       <Card className="border border-border bg-blue-50 dark:bg-blue-950/20 p-4">
         <p className="text-sm text-muted-foreground">
-          <strong>💡 How it works:</strong> Your stored German words are retrieved from n8n and incorporated into the
-          generated text, allowing you to practice vocabulary in realistic contexts.
+          <strong>💡 How it works:</strong> Your stored German words are used to create realistic stories and sentences, helping you learn them in context.
         </p>
       </Card>
     </div>
