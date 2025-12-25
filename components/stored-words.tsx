@@ -55,9 +55,14 @@ export default function StoredWords() {
 
       let rawWords: any[] = []
 
-      if (Array.isArray(data)) {
+      // Prioritize data.items if it exists, as it contains full objects
+      if (data.items && Array.isArray(data.items)) {
+        rawWords = data.items
+      } else if (Array.isArray(data)) {
         rawWords = data
       } else if (data.words && Array.isArray(data.words)) {
+        // If data.words is an array of strings, it's already handled by the map logic below
+        // but it will result in empty fields. We keep it as fallback.
         rawWords = data.words
       } else if (data.deutsch || data.german) {
         // Handle single object response
@@ -66,15 +71,30 @@ export default function StoredWords() {
         rawWords = []
       }
 
-      const transformedWords: Word[] = rawWords.map((item: any, index: number) => ({
-        id: item.row_number?.toString() || item.id?.toString() || index.toString(),
-        german: item.deutsch || item.german || "",
-        english: item.englisch || item.english || "",
-        arabic: item.arabisch || item.arabic || "",
-        partOfSpeech: item.speech || item.partOfSpeech || "",
-        example: item.example || "",
-        addedAt: item.addedAt || new Date().toISOString(),
-      }))
+      const transformedWords: Word[] = rawWords.map((item: any, index: number) => {
+        // Handle cases where item might be a string (from data.words strings array)
+        if (typeof item === 'string') {
+          return {
+            id: index.toString(),
+            german: item,
+            english: "",
+            arabic: "",
+            partOfSpeech: "",
+            example: "",
+            addedAt: new Date().toISOString(),
+          }
+        }
+
+        return {
+          id: item.row_number?.toString() || item.id?.toString() || index.toString(),
+          german: item.deutsch || item.german || "",
+          english: item.englisch || item.english || "",
+          arabic: item.arabisch || item.arabic || "",
+          partOfSpeech: item.speech || item.partOfSpeech || "",
+          example: item.example || "",
+          addedAt: item.addedAt || new Date().toISOString(),
+        }
+      })
 
       setWords(transformedWords)
     } catch (err) {
