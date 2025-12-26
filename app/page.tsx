@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import WordForm from "@/components/word-form"
 import TextGenerator from "@/components/text-generator"
 import StoredWords from "@/components/stored-words"
+import ChatExplainer from "@/components/chat-explainer"
 import Image from "next/image"
 
 export default function Home() {
@@ -89,6 +90,18 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <TextGenerator />
+              </CardContent>
+            </Card>
+
+            <Card className="border border-border">
+              <CardHeader>
+                <CardTitle>Ask & Understand</CardTitle>
+                <CardDescription>
+                  Ask questions about grammar, vocabulary, or get detailed explanations for sentences.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ChatExplainer />
               </CardContent>
             </Card>
           </TabsContent>
